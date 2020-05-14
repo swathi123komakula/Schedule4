@@ -1,0 +1,47 @@
+<br>
+<form #NgForm= "ngForm" novalidate (ngSubmit)="searchScheduledFlightId()" class="form-inline d-flex justify-content-center md-form form-sm mt-0 container">
+    <i class="fas fa-search" aria-hidden="true"></i>
+        <input class="form-control mr-sm-2" type="text" name="fid"  #fid="ngModel" [(ngModel)]="flightno" placeholder="Search Flight" aria-label="Search">
+
+        <button mdbBtn size="sm" gradient="aqua"  value="Submit" rounded="true" class="my-0 waves-light" mdbWavesEffect type="submit">Search</button>
+</form>
+
+<br><div class="container">
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr class="table-active">
+                <th>Scheduled Flight ID</th>
+        
+                <th>Flight Number</th>
+                <th>Flight Model</th>
+                <th>Carrier Name</th>
+                <th>Seat Capacity</th>
+        
+                <th>Available Seats</th>
+                
+                <th>Schedule ID</th>
+                <th>Source Airport</th>
+                <th>Destination Airport</th>
+                <th>Arrival Date</th>
+                <th>Departure Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let scheduledflight of scheduledflight">
+
+                <td>{{scheduledflight.scheduledFlightId}}</td>
+        
+                <td>{{scheduledflight.flight.flightNumber}}</td>
+                <td>{{scheduledflight.flight.flightModel}}</td>
+                <td>{{scheduledflight.flight.carrierName}}</td>
+                <td>{{scheduledflight.flight.seatCapacity}}</td>
+                <td>{{scheduledflight.availableSeats}}</td>
+                <td>{{scheduledflight.schedule.scheduleId}}</td>
+                <td>{{scheduledflight.schedule.sourceAirport.airportCode}}</td>
+                <td>{{scheduledflight.schedule.destinationAirport.airportCode}}</td>
+                <td>{{scheduledflight.schedule.arrivalDate}}</td>
+                <td>{{scheduledflight.schedule.departureDate}}</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>

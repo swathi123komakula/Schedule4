@@ -1,0 +1,25 @@
+<div class="container p-3 mb-2 bg-light text-dark text-center">
+    <h3>Add Airport</h3>
+</div><br><br>
+
+    <form #NgForm= "ngForm" novalidate (ngSubmit)="addAirport()">
+        <div class="form-group">
+            <label  class="font-weight-bold" >Airport Code</label>
+            <input type="string" class="form-control"  id="airportcode"  placeholder="Airport Code"   name="aid"  #aid="ngModel" [(ngModel)]="airport.airportCode" required pattern="[a-z]{1,20}" class="form-control" required>
+            <div *ngIf="aid.invalid && aid.touched">
+                <div *ngIf="aid.errors.required">Flight Number is mandatory</div>
+                <div *ngIf="aid.errors.pattern">Length of Number must be between 3-5</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label  class="font-weight-bold">Airport Name</label>
+            <input type="string" id="airportname" name="an" placeholder="airport Name" [(ngModel)]="airport.airportName" class="form-control" #an="ngModel" required pattern="[a-z]{1,20}">
+        </div>
+        <div class="form-group">
+            <label for="airportlocation1"  class="font-weight-bold">Airport Location</label>
+            <input type="string" id="airportlocation" name="al"   #al="ngModel" placeholder="Airport Location" [(ngModel)]="airport.airportLocation" class="form-control"required pattern="[a-z]{1,20}">
+        </div>
+        <div>
+            <input type="submit" value="addAirport">
+           </div>
+    </form>

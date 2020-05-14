@@ -1,0 +1,54 @@
+<p>addscheduleflight works!</p>
+
+<article >
+
+<form #NgForm= "ngForm" novalidate (ngSubmit)="scheduleFlight()">
+
+    <div>
+        <input type="number" id="scheduledFlightId"  placeholder="Scheduled Flight Id"   name="sfid"  #sfid="ngModel" [(ngModel)]="scheduledflight.scheduledFlightId" required pattern="[1-9]{5}" class="form-control">
+       
+    </div>
+
+     <div>
+        <input type="number" id="flightid" name="fid"  #fid="ngModel" placeholder="Flight Number" [(ngModel)]="scheduledflight.flight.flightNumber" required pattern="[1-9]{5}" class="form-control">
+    </div> 
+    <div>
+        <input type="text" id="flightmo" name="fmo" placeholder="Flight Model" [(ngModel)]="scheduledflight.flight.flightModel" class="form-control" #fmo="ngModel" required pattern="[a-z]{1,20}">
+    </div>
+    <div>
+        <input type="text" id="cname" name="cn"   #cn="ngModel" placeholder="Carrier Name" [(ngModel)]="scheduledflight.flight.carrierName" class="form-control"required pattern="[a-z]{1,20}">
+    </div>
+    <div>
+        <input type="number" id="seat" name="as"  #as="ngModel" placeholder="Seat Capacity" [(ngModel)]="scheduledflight.flight.seatCapacity" class="form-control"required pattern="[0,9]{4}">
+    </div>
+
+
+    <div>
+        <input type="number" id="availableSeats"  placeholder="Available Seats"   name="as"  #as="ngModel" [(ngModel)]="scheduledflight.availableSeats" required pattern="[1-9]{3}" class="form-control">
+    </div>
+
+    <div>
+        <input type="number" id="scheduledId"  placeholder="Scheduled Id"   name="sfid"  #sfid="ngModel" [(ngModel)]="scheduledflight.schedule.scheduleId"  class="form-control">
+    </div>
+    <div>
+        <input type="text" id="source"  placeholder="Sourceairport"   name="src"  #src="ngModel" [(ngModel)]="scheduledflight.schedule.sourceAirport.airportCode"  class="form-control">
+    </div>
+    <div>
+        <input type="text" id="dest"  placeholder="Destination Airport"   name="dest"  #dest="ngModel" [(ngModel)]="scheduledflight.schedule.destinationAirport.airportCode"  class="form-control">
+    </div>
+    <div>
+        <input type="date" id="arrivaldate"  placeholder="Arrival Date"   name="ad"  #ad="ngModel" [(ngModel)]="scheduledflight.schedule.arrivalDate"  class="form-control">
+    </div>
+    <div>
+        <input type="date" id="departuredate"  placeholder="Departure Date"   name="dd"  #dd="ngModel" [(ngModel)]="scheduledflight.schedule.departureDate"  class="form-control">
+    </div>
+
+    <div>
+        <input type="submit"  value="scheduledflight">
+       </div>
+
+</form>
+</article>
+
+
+   
